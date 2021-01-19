@@ -22,3 +22,6 @@ void main()
   printf("When first private is used\n");
   printf("factorial of %d is %llu \n", a, fact2);
 }
+//gcc -fopenmp programname.c -lm -lgd
+//mpicc 8.c -o 88.c
+//mpirun -np 5 ./88.c
