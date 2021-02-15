@@ -4,9 +4,8 @@ from sklearn import datasets
 
 from sklearn.cluster import KMeans
 
-iris = datasets.load_iris()
-X = pd.DataFrame(iris.data, columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'])
-y = pd.DataFrame(iris.target, columns= ["Targets"])
+x = pd.DataFrame(datasets.load_iris().data, columns = datasets.load_iris().feature_names)
+y = pd.DataFrame(datasets.load_iris().target, columns = ['Targets'])
 
 model = KMeans(n_clusters=3, random_state=0)
 model.fit(X)
@@ -14,4 +13,4 @@ model.fit(X)
 import numpy as np
 color_map = np.array(['red','green','blue'])
 import matplotlib.pyplot as plt
-plt.scatter(X.petal_length, X.petal_width, c = color_map[y.Targets], s=40)
+plt.scatter(x['petal length (cm)'], x['petal width (cm)'], c = color_map[y.Targets], s=40)

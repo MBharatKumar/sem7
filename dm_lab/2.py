@@ -5,6 +5,7 @@ from sklearn.preprocessing import MinMaxScaler
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+df = pd.read_csv('CustomerData.csv')
 sns.histplot(data = df["age"])
 
 sns.boxplot(x = df['age'])
